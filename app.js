@@ -2,6 +2,7 @@ const express = require("express");
 const routes = require("./routes");
 const bodyParser = require("body-parser");
 
+
 class App {
   constructor() {
     this.server = express();

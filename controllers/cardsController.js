@@ -19,7 +19,7 @@ class Cards {
             params: { count: req.params.number },
           };
           const carta = await axios.request(options);
-          carta.data.deck_id = "XXXXXXXXXXXXX"
+          carta.data.deck_id = "XXXXXXXXXXXX"
           res.send(carta.data)
     }
 }

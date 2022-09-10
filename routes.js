@@ -11,10 +11,13 @@ routes.options("*", cors(corsOptions));
 
 const news = require("./controllers/newsController");
 const weather = require("./controllers/weatherController");
+const card = require("./controllers/cardsController")
 
 routes.get("/",cors(corsOptions),async function(req, res){
     res.send({status:"ok"})
 })
 routes.get("/weather", cors(corsOptions), weather.Get);
 routes.get("/news", cors(corsOptions), news.Get);
+routes.get("/cards-shuffle", cors(corsOptions), card.GetShuffle);
+routes.get("/cards-draw/:number", cors(corsOptions), card.GetDraw);
 module.exports = routes;

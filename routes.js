@@ -14,7 +14,9 @@ const weather = require("./controllers/weatherController");
 const card = require("./controllers/cardsController")
 
 routes.get("/",cors(corsOptions),async function(req, res){
-    res.send({status:"ok"})
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    await delay(5000);
+    res.send({status:"ok", test: "simple-api", delay: "5 seconds"})
 })
 routes.get("/weather", cors(corsOptions), weather.Get);
 routes.get("/news", cors(corsOptions), news.Get);
